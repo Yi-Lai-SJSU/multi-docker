@@ -15,7 +15,7 @@ after_success:
     - docker build -t yilaisjsu/multi-server ./server
     - docker build -t yilaisjsu/multi-worker ./worker
     # Log in to the docker CLI
-    - echo "$DOCKER_PASSWOED" | docker login -u "$DOCKER_ID" -- password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and push them to docker hug
     - docker push yilaisjsu/multi-client
     - docker push yilaisjsu/multi-nginx
